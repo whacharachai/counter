@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+python/
+
+# Models (downloaded automatically by ultralytics)
+*.pt
+
+# Video / image sources & outputs
+*.mp4
+*.mkv
+*.mov
+*.MTS
+*.jpg
+*.png
+*.tar.xz
+*_counted.mp4
+*_counter.txt
+counter.txt
+
+# Snapshot folders created per counted video
+0/
+1/
+2/
+test_video/
+test6/
+
+# Local helper scripts
+*.bat
+
+# Misc local content
+document/
+people-counter-data.tar.xz

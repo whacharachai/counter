@@ -30,6 +30,18 @@ counter/
 # Local helper scripts
 *.bat
 
+# PyInstaller spec (generated)
+counter.spec
+
+# Lazarus GUI build artifacts
+Lazarus/src/lib/
+Lazarus/src/*.exe
+Lazarus/src/*.res
+Lazarus/src/*.lrs
+Lazarus/src/*.compiled
+Lazarus/src/*.session
+Lazarus/src/*.stat
+
 # Misc local content
 document/
 people-counter-data.tar.xz

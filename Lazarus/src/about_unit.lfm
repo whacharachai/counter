@@ -1,0 +1,81 @@
+object AboutForm: TAboutForm
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'About'
+  ClientHeight = 220
+  ClientWidth = 480
+  Color = clBtnFace
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Position = poScreenCenter
+  object lblTitle: TLabel
+    Left = 20
+    Top = 20
+    Width = 440
+    Height = 24
+    Alignment = taCenter
+    Caption = 'counter.py GUI'
+    Font.Height = -19
+    Font.Style = [fsBold]
+  end
+  object lblCounter: TLabel
+    Left = 20
+    Top = 60
+    Width = 440
+    Height = 16
+    Alignment = taCenter
+    Caption = 'Powered by counter.py  (AGPL-3.0)'
+  end
+  object lblCounterLink: TLabel
+    Left = 20
+    Top = 80
+    Width = 440
+    Height = 16
+    Alignment = taCenter
+    Caption = 'https://github.com/whacharachai/counter'
+    Font.Color = clBlue
+    Font.Style = [fsUnderline]
+    Cursor = crHandPoint
+    OnClick = lblCounterLinkClick
+  end
+  object lblYolo: TLabel
+    Left = 20
+    Top = 116
+    Width = 440
+    Height = 16
+    Alignment = taCenter
+    Caption = 'Uses Ultralytics YOLO for detection & tracking'
+  end
+  object lblYoloLink: TLabel
+    Left = 20
+    Top = 136
+    Width = 440
+    Height = 16
+    Alignment = taCenter
+    Caption = 'https://github.com/ultralytics/ultralytics'
+    Font.Color = clBlue
+    Font.Style = [fsUnderline]
+    Cursor = crHandPoint
+    OnClick = lblYoloLinkClick
+  end
+  object lblLicense: TLabel
+    Left = 20
+    Top = 172
+    Width = 440
+    Height = 16
+    Alignment = taCenter
+    Caption = 'counter.py GUI is licensed under AGPL-3.0-or-later'
+  end
+  object btnOk: TButton
+    Left = 200
+    Top = 192
+    Width = 80
+    Height = 25
+    Caption = 'OK'
+    Default = True
+    ModalResult = mrOk
+    TabOrder = 0
+    OnClick = btnOkClick
+  end
+end

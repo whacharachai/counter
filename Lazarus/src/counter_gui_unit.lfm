@@ -1,0 +1,461 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'counter.py GUI'
+  ClientHeight = 776
+  ClientWidth = 960
+  Color = clBtnFace
+  Font.Height = -13
+  Font.Name = 'Tahoma'
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  object gbExe: TGroupBox
+    Left = 6
+    Top = 6
+    Width = 948
+    Height = 48
+    Caption = 'counter.exe'
+    TabOrder = 0
+    object edExePath: TEdit
+      Left = 8
+      Top = 17
+      Width = 830
+      Height = 25
+      TabOrder = 0
+    end
+    object btnExeBrowse: TButton
+      Left = 845
+      Top = 14
+      Width = 95
+      Height = 28
+      Caption = 'Browse...'
+      TabOrder = 1
+      OnClick = btnExeBrowseClick
+    end
+  end
+  object rgSource: TRadioGroup
+    Left = 6
+    Top = 60
+    Width = 220
+    Height = 44
+    Caption = 'Source'
+    Columns = 2
+    Items.Strings = (
+      'Single File'
+      'Folder')
+    ItemIndex = 0
+    TabOrder = 1
+    OnClick = rgSourceClick
+  end
+  object edSource: TEdit
+    Left = 232
+    Top = 67
+    Width = 660
+    Height = 25
+    TabOrder = 2
+  end
+  object btnBrowse: TButton
+    Left = 898
+    Top = 64
+    Width = 56
+    Height = 28
+    Caption = 'Browse'
+    TabOrder = 3
+    OnClick = btnBrowseClick
+  end
+  object gbModel: TGroupBox
+    Left = 6
+    Top = 110
+    Width = 948
+    Height = 74
+    Caption = 'Model & Device'
+    TabOrder = 4
+    object lblModel: TLabel
+      Left = 8
+      Top = 22
+      Width = 39
+      Height = 16
+      Caption = 'Model:'
+    end
+    object cbModel: TComboBox
+      Left = 80
+      Top = 18
+      Width = 280
+      Height = 24
+      TabOrder = 0
+    end
+    object btnModelBrowse: TButton
+      Left = 368
+      Top = 15
+      Width = 90
+      Height = 28
+      Caption = 'Browse...'
+      TabOrder = 1
+      OnClick = btnModelBrowseClick
+    end
+    object lblDevice: TLabel
+      Left = 470
+      Top = 22
+      Width = 47
+      Height = 16
+      Caption = 'Device:'
+    end
+    object cbDevice: TComboBox
+      Left = 525
+      Top = 18
+      Width = 120
+      Height = 24
+      TabOrder = 2
+    end
+    object lblTracker: TLabel
+      Left = 655
+      Top = 22
+      Width = 50
+      Height = 16
+      Caption = 'Tracker:'
+    end
+    object cbTracker: TComboBox
+      Left = 715
+      Top = 18
+      Width = 225
+      Height = 24
+      TabOrder = 3
+    end
+    object lblMaxFrames: TLabel
+      Left = 8
+      Top = 52
+      Width = 104
+      Height = 16
+      Caption = 'Max frames (0=all):'
+    end
+    object seMaxFrames: TSpinEdit
+      Left = 130
+      Top = 47
+      Width = 70
+      Height = 26
+      TabOrder = 4
+    end
+  end
+  object gbMode: TGroupBox
+    Left = 6
+    Top = 190
+    Width = 948
+    Height = 150
+    Caption = 'Counting Mode'
+    TabOrder = 5
+    object rgMode: TRadioGroup
+      Left = 8
+      Top = 18
+      Width = 116
+      Height = 60
+      Caption = 'Mode'
+      Columns = 1
+      Items.Strings = (
+        'line'
+        'appear')
+      ItemIndex = 0
+      TabOrder = 0
+      OnClick = rgModeClick
+    end
+    object gbLine: TGroupBox
+      Left = 130
+      Top = 12
+      Width = 405
+      Height = 124
+      Caption = 'Line mode'
+      TabOrder = 1
+      object lblLine: TLabel
+        Left = 10
+        Top = 22
+        Width = 84
+        Height = 16
+        Caption = 'Line position:'
+      end
+      object fseLine: TFloatSpinEdit
+        Left = 110
+        Top = 18
+        Width = 70
+        Height = 26
+        TabOrder = 0
+      end
+      object rgLineAxis: TRadioGroup
+        Left = 190
+        Top = 14
+        Width = 200
+        Height = 40
+        Columns = 2
+        Items.Strings = (
+          'horizontal'
+          'vertical')
+        ItemIndex = 0
+        TabOrder = 1
+      end
+      object lblInDir: TLabel
+        Left = 10
+        Top = 52
+        Width = 76
+        Height = 16
+        Caption = 'In direction:'
+      end
+      object cbInDir: TComboBox
+        Left = 110
+        Top = 48
+        Width = 280
+        Height = 24
+        TabOrder = 2
+      end
+      object lblCount: TLabel
+        Left = 10
+        Top = 82
+        Width = 41
+        Height = 16
+        Caption = 'Count:'
+      end
+      object cbCount: TComboBox
+        Left = 110
+        Top = 78
+        Width = 100
+        Height = 24
+        TabOrder = 3
+      end
+    end
+    object gbAppear: TGroupBox
+      Left = 545
+      Top = 12
+      Width = 395
+      Height = 124
+      Caption = 'Appear mode'
+      TabOrder = 2
+      object lblAppearSeconds: TLabel
+        Left = 10
+        Top = 22
+        Width = 74
+        Height = 16
+        Caption = 'Appear (s):'
+      end
+      object edAppearSeconds: TEdit
+        Left = 110
+        Top = 18
+        Width = 80
+        Height = 25
+        TabOrder = 0
+      end
+      object lblMergeSeconds: TLabel
+        Left = 10
+        Top = 52
+        Width = 64
+        Height = 16
+        Caption = 'Merge (s):'
+      end
+      object edMergeSeconds: TEdit
+        Left = 110
+        Top = 48
+        Width = 80
+        Height = 25
+        TabOrder = 1
+      end
+      object lblMergeGap: TLabel
+        Left = 10
+        Top = 82
+        Width = 65
+        Height = 16
+        Caption = 'Merge gap:'
+      end
+      object edMergeGap: TEdit
+        Left = 110
+        Top = 78
+        Width = 80
+        Height = 25
+        TabOrder = 2
+      end
+      object lblAutoHint: TLabel
+        Left = 200
+        Top = 78
+        Width = 150
+        Height = 16
+        Caption = 'blank = auto'
+      end
+    end
+  end
+  object gbDetect: TGroupBox
+    Left = 6
+    Top = 346
+    Width = 948
+    Height = 76
+    Caption = 'Detection, Speed & Output'
+    TabOrder = 6
+    object lblConf: TLabel
+      Left = 8
+      Top = 24
+      Width = 69
+      Height = 16
+      Caption = 'Confidence:'
+    end
+    object fseConf: TFloatSpinEdit
+      Left = 100
+      Top = 19
+      Width = 70
+      Height = 26
+      TabOrder = 0
+    end
+    object lblMinSize: TLabel
+      Left = 190
+      Top = 24
+      Width = 51
+      Height = 16
+      Caption = 'Min size:'
+    end
+    object fseMinSize: TFloatSpinEdit
+      Left = 270
+      Top = 19
+      Width = 70
+      Height = 26
+      TabOrder = 1
+    end
+    object lblImgsz: TLabel
+      Left = 360
+      Top = 24
+      Width = 66
+      Height = 16
+      Caption = 'Image size:'
+    end
+    object seImgsz: TSpinEdit
+      Left = 450
+      Top = 19
+      Width = 70
+      Height = 26
+      TabOrder = 2
+    end
+    object lblStride: TLabel
+      Left = 540
+      Top = 24
+      Width = 39
+      Height = 16
+      Caption = 'Stride:'
+    end
+    object seStride: TSpinEdit
+      Left = 600
+      Top = 19
+      Width = 60
+      Height = 26
+      TabOrder = 3
+    end
+    object chkHalf: TCheckBox
+      Left = 690
+      Top = 20
+      Width = 250
+      Height = 22
+      Caption = 'Half precision (fp16)'
+      TabOrder = 4
+    end
+    object chkSave: TCheckBox
+      Left = 8
+      Top = 50
+      Width = 110
+      Height = 22
+      Caption = 'Save video'
+      TabOrder = 5
+    end
+    object chkNoSnapshots: TCheckBox
+      Left = 120
+      Top = 50
+      Width = 130
+      Height = 22
+      Caption = 'No snapshots'
+      TabOrder = 6
+    end
+    object chkShow: TCheckBox
+      Left = 250
+      Top = 50
+      Width = 130
+      Height = 22
+      Caption = 'Show preview'
+      TabOrder = 7
+    end
+    object chkRtspTcp: TCheckBox
+      Left = 380
+      Top = 50
+      Width = 130
+      Height = 22
+      Caption = 'RTSP over TCP'
+      TabOrder = 8
+    end
+  end
+  object btnRun: TButton
+    Left = 6
+    Top = 430
+    Width = 110
+    Height = 34
+    Caption = 'Run'
+    Default = True
+    TabOrder = 7
+    OnClick = btnRunClick
+  end
+  object btnStop: TButton
+    Left = 122
+    Top = 430
+    Width = 110
+    Height = 34
+    Caption = 'Stop'
+    Enabled = False
+    TabOrder = 8
+    OnClick = btnStopClick
+  end
+  object btnExportCsv: TButton
+    Left = 238
+    Top = 430
+    Width = 120
+    Height = 34
+    Caption = 'Export CSV'
+    TabOrder = 9
+    OnClick = btnExportCsvClick
+  end
+  object btnAbout: TButton
+    Left = 364
+    Top = 430
+    Width = 100
+    Height = 34
+    Caption = 'About'
+    TabOrder = 10
+    OnClick = btnAboutClick
+  end
+  object lblStatus: TLabel
+    Left = 470
+    Top = 438
+    Width = 480
+    Height = 20
+    Caption = 'Ready.'
+  end
+  object pbProgress: TProgressBar
+    Left = 6
+    Top = 470
+    Width = 948
+    Height = 22
+    TabOrder = 11
+  end
+  object mmLog: TMemo
+    Left = 6
+    Top = 498
+    Width = 948
+    Height = 100
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 12
+  end
+  object sgResults: TStringGrid
+    Left = 6
+    Top = 604
+    Width = 948
+    Height = 140
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect]
+    TabOrder = 13
+  end
+  object lblSummary: TLabel
+    Left = 6
+    Top = 750
+    Width = 948
+    Height = 20
+    Caption = ''
+  end
+end
